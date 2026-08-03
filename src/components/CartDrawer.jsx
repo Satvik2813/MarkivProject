@@ -49,7 +49,7 @@ export default function CartDrawer() {
           )}
           {items.map((i) => (
             <div className="cart-line" key={i.key}>
-              <div className="cart-thumb"><Pouch name={i.name} grain={i.grain} size={58} /></div>
+              <div className="cart-thumb"><Pouch name={i.name} grain={i.grain} photo={i.img} size={58} /></div>
               <div className="cart-info">
                 <p className="cart-name">{i.name}</p>
                 <p className="cart-pack">Pack: {i.pack}</p>

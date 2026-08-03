@@ -195,7 +195,7 @@ export default function Checkout() {
             <div className="summary-items">
               {items.map((i) => (
                 <div className="summary-item" key={i.key}>
-                  <div className="si-thumb"><Pouch name={i.name} grain={i.grain} size={44} /></div>
+                  <div className="si-thumb"><Pouch name={i.name} grain={i.grain} photo={i.img} size={44} /></div>
                   <div className="si-info">
                     <b>{i.name}</b>
                     <small>{i.pack} × {i.qty}</small>

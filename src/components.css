@@ -18,9 +18,14 @@
 /* ============ Product card ============ */
 .product-card { background: var(--white); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; transition: transform .18s ease, box-shadow .18s ease; }
 .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-.pc-image { position: relative; display: flex; align-items: center; justify-content: center; height: 250px; overflow: hidden; background: radial-gradient(120% 90% at 50% 12%, #f3ead6 0%, #e9dcc2 60%, #e2d2b4 100%); }
-.pc-image .pouch-svg { transition: transform .35s ease; filter: drop-shadow(0 10px 16px rgba(90,70,40,.18)); }
-.product-card:hover .pc-image .pouch-svg { transform: translateY(-4px) scale(1.04); }
+.pc-image {
+  position: relative; display: flex; align-items: flex-end; justify-content: center; height: 260px; overflow: hidden;
+  background:
+    linear-gradient(180deg, transparent 62%, rgba(150,116,74,.22) 62%, rgba(120,90,55,.30) 100%),
+    radial-gradient(120% 85% at 50% 8%, #f6eeda 0%, #eaddc3 58%, #e0cfae 100%);
+}
+.pc-image .pouch-svg { transition: transform .35s ease; filter: drop-shadow(0 12px 18px rgba(80,60,34,.24)); margin-bottom: 6px; }
+.product-card:hover .pc-image .pouch-svg { transform: translateY(-5px) scale(1.04); }
 .pc-badge { position: absolute; top: 14px; left: 14px; background: var(--green); color: #fff; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 20px; }
 .pc-body { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
 .pc-name { font-size: 20px; color: var(--green); }
@@ -122,7 +127,12 @@
 .pdp-thumbs { display: flex; flex-direction: column; gap: 12px; }
 .pdp-thumb { border: 2px solid var(--line); border-radius: 12px; padding: 4px; background: #ede2ce; display: grid; place-items: center; transition: border-color .15s; }
 .pdp-thumb.active { border-color: var(--green); }
-.pdp-main-image { background: linear-gradient(180deg, #efe6d2, #e6d7bd); border-radius: 20px; display: grid; place-items: center; padding: 26px; }
+.pdp-main-image {
+  border-radius: 20px; display: flex; align-items: flex-end; justify-content: center; padding: 30px 26px 0; overflow: hidden; min-height: 470px;
+  background:
+    linear-gradient(180deg, transparent 66%, rgba(150,116,74,.20) 66%, rgba(120,90,55,.30) 100%),
+    radial-gradient(110% 80% at 50% 6%, #f6eeda 0%, #eadcc2 60%, #ddcaa6 100%);
+}
 .pdp-info h1 { font-size: 42px; margin-bottom: 12px; }
 .pdp-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; color: var(--muted); }
 .pdp-rating .stars { display: flex; gap: 2px; }

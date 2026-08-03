@@ -9,7 +9,7 @@ export default function ProductCard({ product }) {
   return (
     <div className="product-card">
       <Link to={`/product/${product.id}`} className="pc-image">
-        <Pouch name={product.name} grain={product.grain} size={200} />
+        <Pouch name={product.name} grain={product.grain} photo={product.img} size={210} />
         {product.featured && <span className="pc-badge">Bestseller</span>}
       </Link>
       <div className="pc-body">

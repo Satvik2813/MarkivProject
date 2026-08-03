@@ -68,14 +68,14 @@ export default function Product() {
                 onClick={() => setImgIdx(i)}
               >
                 {src === "__pouch__"
-                  ? <Pouch name={product.name} grain={product.grain} size={62} />
+                  ? <Pouch name={product.name} grain={product.grain} photo={product.img} size={62} />
                   : <img src={src} alt={`${product.name} view ${i + 1}`} />}
               </button>
             ))}
           </div>
           <div className="pdp-main-image">
             {gallery[imgIdx] === "__pouch__"
-              ? <Pouch name={product.name} grain={product.grain} size={340} />
+              ? <Pouch name={product.name} grain={product.grain} photo={product.img} size={340} />
               : <img src={gallery[imgIdx]} alt={product.name} />}
           </div>
         </div>
