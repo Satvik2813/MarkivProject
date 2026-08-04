@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart, formatINR } from "../context/CartContext";
 import Pouch from "../components/Pouch";
 import { Check } from "../components/icons";
@@ -9,6 +9,7 @@ const COUPONS = { SHUDDHA10: 0.1, FRESH50: 50, MILLET15: 0.15 };
 
 export default function Checkout() {
   const { items, subtotal, clearCart } = useCart();
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({ name: "", mobile: "", pincode: "", city: "", address: "" });
   const [errors, setErrors] = useState({});
@@ -51,7 +52,8 @@ export default function Checkout() {
     ? COUPONS[applied] < 1 ? Math.round(subtotal * COUPONS[applied]) : COUPONS[applied]
     : 0;
   const shipping = subtotal >= FREE_SHIP ? 0 : subtotal > 0 ? 49 : 0;
-  const grandTotal = Math.max(0, subtotal - discount + shipping);
+  const codFee = payMethod === "COD" && subtotal > 0 ? 0 : 0;
+  const grandTotal = Math.max(0, subtotal - discount + shipping + codFee);
 
   const progress = Math.min(100, (subtotal / FREE_SHIP) * 100);
 
