@@ -52,8 +52,7 @@ export default function Checkout() {
     ? COUPONS[applied] < 1 ? Math.round(subtotal * COUPONS[applied]) : COUPONS[applied]
     : 0;
   const shipping = subtotal >= FREE_SHIP ? 0 : subtotal > 0 ? 49 : 0;
-  const codFee = payMethod === "COD" && subtotal > 0 ? 0 : 0;
-  const grandTotal = Math.max(0, subtotal - discount + shipping + codFee);
+  const grandTotal = Math.max(0, subtotal - discount + shipping);
 
   const progress = Math.min(100, (subtotal / FREE_SHIP) * 100);
 
