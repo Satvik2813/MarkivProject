@@ -3,7 +3,7 @@
 A fully-functional organic millet e-commerce storefront built with **React + Vite**.
 100% organic, stone-ground millet powders and flours — "From Traditional Farms to Your Kitchen".
 
-**Live demo:** https://shuddha-millets.netlify.app
+**Live demo:** _add your Netlify URL here_
 **Repo:** https://github.com/Satvik2813/MarkivProject
 
 ---
