@@ -16,7 +16,7 @@ const benefitIcons = ["🥛", "📉", "🚫", "🌿", "⚡", "🌱"];
 export default function Product() {
   const { id } = useParams();
   const product = getProduct(id);
-  const { addItem, setDrawerOpen } = useCart();
+  const { addItem } = useCart();
   const navigate = useNavigate();
 
   const [packIdx, setPackIdx] = useState(0);
